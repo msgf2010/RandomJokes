@@ -1,0 +1,33 @@
+﻿<div class="row">
+    <div class="col-md-6 col-md-offset-3 well">
+        <h3>Click the button to get a random joke:</h3>
+        <br />
+        <button id="get-joke" class="btn btn-primary">Get Random Joke</button>
+        <br />
+        <br />
+        <h4 id="setup"></h4>
+        <h5 id="punchline"></h5>
+        <input id="joke-id" type="hidden" />
+
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <a href="/account/login">To like or unlike login to your account</a>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-md-2">
+                    <button class="btn btn-link btn-lg" id="like" style="color:cornflowerblue"></button>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-link btn-lg" id="unlike" style="color:lightcoral"></button>
+                </div>
+            </div>
+            <br />
+        }
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/Index.js"></script>
+}
